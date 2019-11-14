@@ -18,14 +18,7 @@ open class LGButton: UIControl {
     }
     
     let touchDisableRadius : CGFloat = 100.0
-    
-    private var availableFontIcons: [String: IconFont] = ["fa": Fonts.awesome,
-                                                          "io": Fonts.ion,
-                                                          "oc": Fonts.oct,
-                                                          "ic": Fonts.ic,
-                                                          "ma": Fonts.material,
-                                                          "ti": Fonts.themify,
-                                                          "mi": Fonts.map]
+  
     
     fileprivate var gradient : CAGradientLayer?
     
@@ -371,7 +364,6 @@ open class LGButton: UIControl {
     // MARK:
     override init(frame: CGRect) {
         super.init(frame: frame)
-        registIconFont()
         xibSetup()
         setupView()
     }
@@ -506,7 +498,7 @@ open class LGButton: UIControl {
                    heightConstraint: leftImageHeightConstraint,
                    widthValue: leftImageWidth,
                    heightValue: leftImageHeight)
-        leftIcon.isHidden =  (leftImageSrc != nil || !(SwiftIconFont.fonts[leftIconFontName] != nil))
+        leftIcon.isHidden =  (leftImageSrc != nil )
     }
     
     fileprivate func setupRightImage(){
@@ -518,7 +510,7 @@ open class LGButton: UIControl {
                    heightConstraint: rightImageHeightConstraint,
                    widthValue: rightImageWidth,
                    heightValue: rightImageHeight)
-        rightIcon.isHidden =  (rightImageSrc != nil || !(SwiftIconFont.fonts[rightIconFontName] != nil))
+        rightIcon.isHidden =  (rightImageSrc != nil )
     }
     
     fileprivate func setupSpacings(){
